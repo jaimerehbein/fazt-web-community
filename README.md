@@ -14,5 +14,11 @@
 * **Willishakespeare** [GitHub](https://github.com/Willishakespeare)
 * **EveryWhereJP** [GitHub](https://github.com/JhosuaP97)
 * **Agustin** [Github](https://github.com/AgustinZalazar)
+* **Frayni** [Github](https://github.com/frayni)
+* **Andranuz** [Github](https://github.com/adranuz)
+* **Nicksiuxs** [Github](https://github.com/nicksiuxs)
+* **Andony** [Github](https://github.com/aimarandony)
+
+
 
 # [License](./LICENSE)
