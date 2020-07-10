@@ -15,8 +15,8 @@ const Navegation = () => {
       </ul>
       <img className="navigation__image" src={faztCommunity} alt="fazt-community" />
       <ul className="navigation__ul-rightSide">
-        <li className="navigation__li">Registrarse</li>
         <li className="navigation__li">Iniciar sesión</li>
+        <li className="navigation__li">Registrarse</li>
       </ul>
     </div>
   );
