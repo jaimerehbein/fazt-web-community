@@ -4,17 +4,17 @@ import faztCommunity from '../../img/faztCommunity.png'
 
 const Navegation = () => {
     return (
-        <div className="Navegation">
-            <ul className='Navegation__ul-left-side'>
-                //for now they are li but when the main componentsbe created we make routes 4 spa and use navlink/link
-                <li className='Navegation__li'>Proyectos</li>
-                <li className='Navegation__li'>Contribuidores</li>
-                <li className='Navegation__li'>Inicio</li>
+        <div className="navigation">
+            <ul className='navigation__ul-leftSide'>
+                {/*for now they are li but when the main components be created we make routes for SPA and use navlink/link*/}
+                <li className='navigation__li'>Proyectos</li>
+                <li className='navigation__li'>Contribuidores</li>
+                <li className='navigation__li'>Inicio</li>
             </ul>
-            <img className='Navegation__image' src={faztCommunity} alt="fazt-community"/>
-            <ul className='Navegation__ul-right-side'>
-                <li className='Navegation__li'>Registrarse</li>
-                <li className='Navegation__li'>Iniciar sesión</li>
+            <img className='navigation__image' src={faztCommunity} alt="fazt-community"/>
+            <ul className='navigation__ul-rightSide'>
+                <li className='navigation__li'>Registrarse</li>
+                <li className='navigation__li'>Iniciar sesión</li>
             </ul>
         </div>
     )

@@ -1,30 +1,22 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@font-face{
-    font-family: 'Roboto';
-    src: url(../../fonts/Roboto-Regular.ttf);
-}
-
-.Navegation{
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    box-shadow: 0px 5px 10px rgb(200, 200, 200);
-    border-radius: 3px;
-}
-
-.Navegation__li{
+.navigation {
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 0px 5px 10px rgb(200, 200, 200);
+  border-radius: 3px;
+  &__li {
     display: inline-flex;
     padding: 20px;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-weight: bold;
-}
-
-.Navegation__image{
+  }
+  &__image {
     margin: 0px auto;
     position: absolute;
     margin-top: 34px;
@@ -34,12 +26,13 @@
     width: 50px;
     height: 50px;
     box-shadow: 0px -3px 4px 4px rgb(200, 200, 200);
-}
-
-.Navegation__ul-left-side{
-    margin-left: 80px;
-}
-
-.Navegation__ul-right-side{
-    margin-right: 80px;
+  }
+  &__ul {
+    &-leftSide {
+      margin-left: 80px;
+    }
+    &-rightSide {
+      margin-right: 80px;
+    }
+  }
 }
