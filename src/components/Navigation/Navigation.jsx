@@ -1,3 +1,5 @@
+/* Copyright 2020 Fazt Community ~ All rights reserved. MIT license. */
+
 import React from 'react';
 import './Navigation.scss';
 import faztCommunity from '../../img/faztCommunity.png';
