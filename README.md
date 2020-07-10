@@ -9,5 +9,10 @@
 
 # Contributors
 * **Blopa** [GitHub](https://github.com/blopaa)
+* **Rodri** [GitHub](https://github.com/rodrigojimenezdencker)
+* **Yuborama** [GitHub](https://github.com/yuborama)
+* **Willishakespeare** [GitHub](https://github.com/Willishakespeare)
+* **EveryWhereJP** [GitHub](https://github.com/JhosuaP97)
+* **Agustin** [Github](https://github.com/AgustinZalazar)
 
 # [License](./LICENSE)
