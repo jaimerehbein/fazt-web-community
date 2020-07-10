@@ -1,5 +1,5 @@
 import React from 'react'
-import './Navegation.scss'
+import './Navigation.scss'
 import faztCommunity from '../../img/faztCommunity.png'
 
 const Navegation = () => {

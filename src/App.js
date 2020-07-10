@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import './fonts/fonts.scss'
-import Navegation from './components/Navegation/Navegation.jsx';
+import Navigation from './components/Navigation/Navigation.jsx';
 
 function App() {
   return (
     <div>
-        <Navegation/>
+        <Navigation/>
     </div>
   );
 }
