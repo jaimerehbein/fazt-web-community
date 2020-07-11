@@ -1,3 +1,5 @@
+/* Copyright 2020 Fazt Community ~ All rights reserved. MIT license. */
+
 const { override, addWebpackAlias } = require('customize-cra');
 const { resolve } = require('path');
 

@@ -1,10 +1,11 @@
+/* Copyright 2020 Fazt Community ~ All rights reserved. MIT license. */
+
 import React from 'react';
-import './App.css';
-import './fonts/fonts.scss';
+
 import Navigation from './components/Navigation/Navigation.jsx';
-import Footer from './components/Footer/Footer.jsx';
 import SocialLink from './components/SocialLink/SocialLink.jsx';
 import ListContributor from './components/ListContributor/ListContributor';
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
   return (

@@ -42,8 +42,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './CardProyect.scss';
-import heartIcon from '../../img/icons/heart.svg';
 import { usePalette } from 'react-palette';
+import heartIcon from '@assets/img/icons/heart.svg';
 
 const CardProyect = ({ nameProyect, imageUrl, arrayProyects, favAmount, size }) => {
   var { data } = usePalette(imageUrl);
