@@ -11,6 +11,7 @@ function App() {
     <div>
         <Navigation/>
         <SocialLink/>
+        <ListContributor/>
         <Footer/>
     </div>
   );
