@@ -1,36 +1,42 @@
 /* Copyright 2020 Fazt Community ~ All rights reserved. MIT license. */
 
+//TODO: agregar esto en un boilerplate mejor
+// const arrayProyects = [
+//  {
+//     name: "React",
+//     url: "/img/icons/react.svg",
+//     color: "#FFFFFF"
+//  },
+//  {
+//     name: "GraphQL",
+//     url: "/img/icons/graphql.svg",
+//     color: "#FFFFFF"
+//  },
+//  {
+//     name: "Python",
+//     url: "img/icons/python.svg"
+//     color: "#FFFFFF"
+//  }]
+//    const favAmount = 10
+//    returns(
+//   <CardProyect size={m-card} theme={white} nameProyect={nameProyect} imageUrl={imageUrl} arrayProyects={arrayProyects} favAmount={favAmount} >
+// )
+
 /**
  * <Component for showing details of the proyect>
  * @component
+ * @param   {String}    size            Size of Card (Small / Medium / Big)
+ * @param   {String}    theme           Theme of Component (For Future implementations)
  * @param   {String}    nameProyect     Name of Proyect
  * @param   {String}    imageUrl        Url Of Image Proyect
  * @param   {Array}     arrayProyects   Array of Technologies
  * @param   {Number}    favAmount       Amount of Favorites
  * @return  {<CardProyect>}
  * @example
+ * const size = "s-card"
+ * const theme = "white"
  * const nameProyect= "React App Name"
  * const imageUrl = "https://api/image.jpg"
- * const arrayProyects = [
- *                         {
- *                            name: "React",
- *                            url: "/img/icons/react.svg",
- *                            color: "#FFFFFF"
- *                         },
- *                         {
- *                            name: "GraphQL",
- *                            url: "/img/icons/graphql.svg",
- *                            color: "#FFFFFF"
- *                         },
- *                         {
- *                            name: "Python",
- *                            url: "img/icons/python.svg"
- *                            color: "#FFFFFF"
- *                         }]
- * const favAmount = 10
- * returns(
- * <CardProyect nameProyect={nameProyect} imageUrl={imageUrl} arrayProyects={arrayProyects} favAmount={favAmount} >
- * )
  */
 
 import React from 'react';
@@ -39,7 +45,7 @@ import './CardProyect.scss';
 import heartIcon from '../../img/icons/heart.svg';
 import { usePalette } from 'react-palette';
 
-const CardProyect = ({nameProyect, imageUrl, arrayProyects, favAmount }) => {
+const CardProyect = ({ nameProyect, imageUrl, arrayProyects, favAmount, size }) => {
   var { data } = usePalette(imageUrl);
   data = data.vibrant;
   if (!imageUrl) {
@@ -51,8 +57,47 @@ const CardProyect = ({nameProyect, imageUrl, arrayProyects, favAmount }) => {
     backgroundPosition: 'center center',
     backgroundSize: 'cover',
   };
+
+  const styleCard = (size) => {
+    if (size === 's-card') {
+      return {
+        height: '150',
+        width: '100',
+        fontTitle: 'small',
+        fontDesc: 'x-small',
+      };
+    } else if (size === 'm-card') {
+      return {
+        height: '300',
+        width: '200',
+        fontTitle: 'large',
+        fontDesc: 'medium',
+      };
+    } else if (size === 'b-card') {
+      return {
+        height: '600',
+        width: '500',
+        fontTitle: 'xx-large',
+        fontDesc: 'x-large',
+      };
+    } else {
+      return {
+        height: '200',
+        width: '150',
+        fontTitle: 'medium',
+        fontDesc: 'small',
+      };
+    }
+  };
+
   return (
-    <div className="proyectCard">
+    <div
+      className="proyectCard"
+      style={{
+        height: `${styleCard(size).height}px`,
+        width: `${styleCard(size).width}px`,
+      }}
+    >
       <div className="proyectCard__background" style={backgroundStyle}>
         <div className="proyectCard__container">
           <div className="proyectCard__container__upSide">
@@ -73,8 +118,11 @@ const CardProyect = ({nameProyect, imageUrl, arrayProyects, favAmount }) => {
                 ))}
               </div>
               <div className="proyectCard__container__upSide__containerBar__fav">
-                <span className="proyectCard__container__upSide__containerBar__fav__favAmount">
-                  {favAmount}{' '}
+                <span
+                  className="proyectCard__container__upSide__containerBar__fav__favAmount"
+                  style={{ fontSize: styleCard(size).fontDesc }}
+                >
+                  {favAmount}
                 </span>
                 <img
                   className="proyectCard__container__upSide__containerBar__fav__favIcon"
@@ -98,38 +146,51 @@ const CardProyect = ({nameProyect, imageUrl, arrayProyects, favAmount }) => {
             }}
             style={{ backgroundColor: data }}
           >
-            <span className="proyectCard__container__downSide__nameProyect">{nameProyect}</span>
+            <span
+              className="proyectCard__container__downSide__nameProyect"
+              style={{ fontSize: styleCard(size).fontTitle }}
+            >
+              {nameProyect}
+            </span>
           </div>
         </div>
       </div>
     </div>
   );
 };
+
 CardProyect.propTypes = {
-  /**
-   * Name of Proyect nameProyect
-   */
+  size: PropTypes.string,
+  theme: PropTypes.string,
   nameProyect: PropTypes.string.isRequired,
   imageUrl: PropTypes.string,
-  arrayProyects: [
-    {
-      name: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-      color: PropTypes.string.isRequired,
-    },
-  ],
-  favAmount: PropTypes.number,
+  arrayProyects: PropTypes.array,
+  favAmount: PropTypes.string.isRequired,
 };
+
 CardProyect.defaultProps = {
-  nameProyect: 'nameProyect',
+  nameProyect: 'ups.. ',
   imageUrl: '',
   arrayProyects: [
     {
-      name: 'React',
-      url: '/img/icons/react.svg',
-      color: '#53C1DE',
+      name: 'NotFound',
+      url: '/img/icons/notfound.svg',
+      color: '#E04149',
+    },
+    {
+      name: 'NotFound',
+      url: '/img/icons/notfound.svg',
+      color: '#E04149',
+    },
+    {
+      name: 'NotFound',
+      url: '/img/icons/notfound.svg',
+      color: '#E04149',
     },
   ],
-  favAmount: '0',
+  favAmount: '-7',
+  size: 'm-card',
+  theme: 'white',
 };
+
 export default CardProyect;
