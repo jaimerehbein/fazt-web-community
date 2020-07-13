@@ -1,48 +1,25 @@
 /* Copyright 2020 Fazt Community ~ All rights reserved. MIT license. */
-/*
-    proyectName="String"
-    proyectImage="String"
-    proyectDescription="String"
-    proyectGit="String"
-    proyectURL="String"
-
-    const arrayTech = [ 
-        {
-            name: "React"
-            url: "../img/react.svg"
-        },
-        {
-            name: "Javascript"
-            url: "../img/javascript.svg"
-        },
-        {
-            name: "Node"
-            url: "../img/node.svg"
-        }
-    ]
-    <ProyectInfo proyectName={proyectName} proyectImage={proyectImage} proyectDescription={proyectDescription} proyectGit={URL} proyectURL={URL}
-*/
 
 import React from 'react';
-import './ProyectInfo.scss';
+import './ProjectInfo.scss';
 import Github from './svg/github.svg';
 import URL from './svg/url.svg';
 import TechLogo from '../TechLogos/TechLogos.jsx';
 import PropTypes from 'prop-types';
 
-const ProyectInfo = ({
-  proyectName,
-  proyectImage,
-  proyectDescription,
+const projectInfo = ({
+  projectName,
+  projectImage,
+  projectDescription,
   arrayTech,
-  proyectGit,
-  proyectURL
+  projectGit,
+  projectURL
 }) => {
   return (
-    <div className="proyectInfo">
+    <div className="projectInfo">
       <div className="title">
         <div className="Image">
-          <img className="Image__1" src={proyectImage} alt="img" />
+          <img className="Image__1" src={projectImage} alt="img" />
         </div>
         <div className="description__2">
           <h1 className="title__4">Code & Demo</h1>
@@ -57,21 +34,21 @@ const ProyectInfo = ({
 
           <div className="hover__2">
             <div className="hover__3">
-              <a className="hover__3" href={proyectGit}>
+              <a className="hover__3" href={projectGit}>
                 Click aqui
               </a>
             </div>
             <div className="hover__4">
-              <a className="hover__4" href={proyectURL}>
+              <a className="hover__4" href={projectURL}>
                 URL
               </a>
             </div>
           </div>
         </div>
         <div className="description">
-          <h1 className="title__1">{proyectName}</h1>
+          <h1 className="title__1">{projectName}</h1>
           <h2 className="title__2">Descripcion del proyecto</h2>
-          <p className="title__3">{proyectDescription}</p>
+          <p className="title__3">{projectDescription}</p>
           <h2 className="title__2">Tecnologia usada</h2>
           <div>
             {arrayTech.map((item) => (
@@ -83,19 +60,19 @@ const ProyectInfo = ({
     </div>
   );
 };
-ProyectInfo.propTypes = {
-  proyectName: PropTypes.string.isRequired,
-  proyectDescription: PropTypes.string.isRequired,
-  proyectImage: PropTypes.string.isRequired,
+projectInfo.propTypes = {
+  projectName: PropTypes.string.isRequired,
+  projectDescription: PropTypes.string.isRequired,
+  projectImage: PropTypes.string.isRequired,
   arrayTech: PropTypes.array,
-  proyectGit: PropTypes.string,
-  proyectURL: PropTypes.string
+  projectGit: PropTypes.string,
+  projectURL: PropTypes.string
 };
-ProyectInfo.defaultProps = {
-  proyectName: 'Nombre del proyecto',
-  proyectDescription:
+projectInfo.defaultProps = {
+  projectName: 'Nombre del proyecto',
+  projectDescription:
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi eos perspiciatis nemo itaque voluptatum odio architecto esse! Ipsa, quas modi.',
-  proyectImage: 'https://www.dekrs.com/img/image_not_found.png',
+  projectImage: 'https://www.dekrs.com/img/image_not_found.png',
   arrayTech: [
     {
       name: 'not found',
@@ -110,8 +87,8 @@ ProyectInfo.defaultProps = {
       url: 'https://www.dekrs.com/img/image_not_found.png'
     }
   ],
-  proyectGit: '',
-  proyectURL: ''
+  projectGit: '',
+  projectURL: ''
 };
 
-export default ProyectInfo;
+export default projectInfo;
