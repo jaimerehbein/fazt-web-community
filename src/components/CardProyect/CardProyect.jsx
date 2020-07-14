@@ -1,27 +1,5 @@
 /* Copyright 2020 Fazt Community ~ All rights reserved. MIT license. */
 
-//TODO: agregar esto en un boilerplate mejor
-// const arrayProyects = [
-//  {
-//     name: "React",
-//     url: "/img/icons/react.svg",
-//     color: "#FFFFFF"
-//  },
-//  {
-//     name: "GraphQL",
-//     url: "/img/icons/graphql.svg",
-//     color: "#FFFFFF"
-//  },
-//  {
-//     name: "Python",
-//     url: "img/icons/python.svg"
-//     color: "#FFFFFF"
-//  }]
-//    const favAmount = 10
-//    returns(
-//   <CardProyect size={m-card} theme={white} nameProyect={nameProyect} imageUrl={imageUrl} arrayProyects={arrayProyects} favAmount={favAmount} >
-// )
-
 /**
  * <Component for showing details of the proyect>
  * @component
@@ -32,11 +10,6 @@
  * @param   {Array}     arrayProyects   Array of Technologies
  * @param   {Number}    favAmount       Amount of Favorites
  * @return  {<CardProyect>}
- * @example
- * const size = "s-card"
- * const theme = "white"
- * const nameProyect= "React App Name"
- * const imageUrl = "https://api/image.jpg"
  */
 
 import React from 'react';
@@ -45,7 +18,7 @@ import './CardProyect.scss';
 import heartIcon from '../../img/icons/heart.svg';
 import { usePalette } from 'react-palette';
 
-const CardProyect = ({ nameProyect, imageUrl, arrayProyects, favAmount, size }) => {
+const CardProyect = ({ id, nameProyect, imageUrl, arrayProyects, favAmount, size }) => {
   var { data } = usePalette(imageUrl);
   data = data.vibrant;
   if (!imageUrl) {
@@ -61,31 +34,23 @@ const CardProyect = ({ nameProyect, imageUrl, arrayProyects, favAmount, size }) 
   const styleCard = (size) => {
     if (size === 's-card') {
       return {
-        height: '150',
-        width: '100',
         fontTitle: 'small',
         fontDesc: 'x-small',
       };
     } else if (size === 'm-card') {
       return {
-        height: '300',
-        width: '200',
-        fontTitle: 'large',
-        fontDesc: 'medium',
+        fontTitle: 'calc(.2em + 1vw) ',
+        fontDesc: 'calc(.1em + 1vw)',
       };
     } else if (size === 'b-card') {
       return {
-        height: '600',
-        width: '500',
-        fontTitle: 'xx-large',
-        fontDesc: 'x-large',
+        fontTitle: 'calc(1em + 1vw)',
+        fontDesc: 'calc(.5em + 1vw)',
       };
     } else {
       return {
-        height: '200',
-        width: '150',
-        fontTitle: 'medium',
-        fontDesc: 'small',
+        fontTitle: 'calc(.2em + 1vw) ',
+        fontDesc: 'calc(.1em + 1vw)',
       };
     }
   };
@@ -93,10 +58,6 @@ const CardProyect = ({ nameProyect, imageUrl, arrayProyects, favAmount, size }) 
   return (
     <div
       className="proyectCard"
-      style={{
-        height: `${styleCard(size).height}px`,
-        width: `${styleCard(size).width}px`,
-      }}
     >
       <div className="proyectCard__background" style={backgroundStyle}>
         <div className="proyectCard__container">
@@ -134,15 +95,15 @@ const CardProyect = ({ nameProyect, imageUrl, arrayProyects, favAmount, size }) 
             </div>
           </div>
           <div
-            id="proyectCard__container__downSide-id"
+            id={`proyectCard__container__downSide-id${id}`}
             className="proyectCard__container__downSide"
             onMouseEnter={() => {
-              document.getElementById('proyectCard__container__downSide-id').style.backgroundColor =
+              document.getElementById(`proyectCard__container__downSide-id${id}`).style.backgroundColor =
                 '#DB224A';
-              document.getElementById('proyectCard__container__downSide-id').style.cursor = 'pointer';
+              document.getElementById(`proyectCard__container__downSide-id${id}`).style.cursor = 'pointer';
             }}
             onMouseLeave={() => {
-              document.getElementById('proyectCard__container__downSide-id').style.backgroundColor = data;
+              document.getElementById(`proyectCard__container__downSide-id${id}`).style.backgroundColor = data;
             }}
             style={{ backgroundColor: data }}
           >
@@ -160,6 +121,7 @@ const CardProyect = ({ nameProyect, imageUrl, arrayProyects, favAmount, size }) 
 };
 
 CardProyect.propTypes = {
+  id: PropTypes.number,
   size: PropTypes.string,
   theme: PropTypes.string,
   nameProyect: PropTypes.string.isRequired,
@@ -169,7 +131,8 @@ CardProyect.propTypes = {
 };
 
 CardProyect.defaultProps = {
-  nameProyect: 'ups.. ',
+  id: 0,
+  nameProyect: 'Missing Project',
   imageUrl: '',
   arrayProyects: [
     {
