@@ -8,12 +8,13 @@ import ListContributor from './components/ListContributor/ListContributor';
 import Footer from './components/Footer/Footer.jsx';
 
 function App() {
+
   return (
     <div>
-        <Navigation/>
-        <SocialLink/>
-        <ListContributor/>
-        <Footer/>
+      <Navigation />
+      <SocialLink />
+      <ListContributor />
+      <Footer />
     </div>
   );
 }
