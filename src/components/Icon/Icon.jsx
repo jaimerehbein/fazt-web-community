@@ -10,6 +10,6 @@ export const Icon = ({ src, icon: ComponentIcon, form }) => {
     return <img className={'icon ' + form} src={src} alt="icon" />;
   } else {
     console.log('else');
-    return <ComponentIcon className={'icon ' + form} fontSize="inherit"/>;
+    return <ComponentIcon className={'icon ' + form}/>;
   }
 };

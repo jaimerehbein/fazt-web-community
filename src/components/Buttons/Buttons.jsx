@@ -2,6 +2,7 @@
 
 import React from 'react';
 import './Buttons.scss';
+import { Icon } from '../Icon/Icon.jsx';
 
 export const ButtonSolid = ({ text }) => {
   return (
@@ -19,22 +20,11 @@ export const ButtonUnline = ({ text }) => {
   );
 };
 
-
-export const ButtonUnlineIcon = ({ text, icon, form,prueba }) => {
-  if (icon === null) {
-    return (
-      <div className="ComponentBTNUnlineClass ">
-        <span>{text}</span>
-      </div>
-    );
-  } else {
-    return (
-      <div className="ComponentBTNUnlineClass ">
-        <img className={'icon ' + form} src={icon} alt="icon" />
-        {prueba}
-        <span>{text}</span>
-      </div>
-    );
-  }
+export const ButtonUnlineIcon = ({ text, icon, form, src }) => {
+  return (
+    <div className="ComponentBTNUnlineClass ">
+      {(icon || src) && <Icon icon={icon} form={form} src={src} />}
+      <span>{text}</span>
+    </div>
+  );
 };
-
