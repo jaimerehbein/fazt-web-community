@@ -5,17 +5,6 @@ import CardProyect from '../CardProyect/CardProyect';
 import { ButtonSolid } from '../Buttons/Buttons';
 function CardsGrid() {
 
-  var testProyect = [
-    { _id: 0 },
-    { _id: 1 },
-    { _id: 2 },
-    { _id: 3 },
-    { _id: 4 },
-    { _id: 5 },
-    { _id: 6 },
-    { _id: 7 },
-    { _id: 8 },
-  ];
   const [Data, setData] = useState([]);
   const [Fetch, setFetch] = useState([]);
 
@@ -31,7 +20,17 @@ function CardsGrid() {
         setFetch(true);
       })
       .catch((error) => {
-        setData(testProyect);
+        setData([
+          { _id: 0 },
+          { _id: 1 },
+          { _id: 2 },
+          { _id: 3 },
+          { _id: 4 },
+          { _id: 5 },
+          { _id: 6 },
+          { _id: 7 },
+          { _id: 8 },
+        ]);
         /*Change to false to dont see the test view */
         setFetch(true);
       });
@@ -46,7 +45,7 @@ function CardsGrid() {
       <div className="containerGrid__cardsGrid">
         {Fetch ? (
           <>
-            <TransitionGroup appear={true} className="containerGrid__cardsGrid__primary">
+            <TransitionGroup appear={true} enter={false} exit={false} className="containerGrid__cardsGrid__primary">
               {Data.slice(0, 1).map((item) => (
                 <CSSTransition key={item._id} timeout={1500} classNames="item">
                   <CardProyect 
@@ -63,7 +62,7 @@ function CardsGrid() {
               ))}
             </TransitionGroup>
 
-            <TransitionGroup appear={true} className="containerGrid__cardsGrid__secondary">
+            <TransitionGroup appear={true} enter={false} exit={false}  className="containerGrid__cardsGrid__secondary">
               {Data.slice(1, 9).map((item) => (
                 <CSSTransition key={item._id} timeout={1500} classNames="item">
                    <CardProyect 
