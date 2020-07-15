@@ -18,3 +18,23 @@ export const ButtonUnline = ({ text }) => {
     </div>
   );
 };
+
+
+export const ButtonUnlineIcon = ({ text, icon, form,prueba }) => {
+  if (icon === null) {
+    return (
+      <div className="ComponentBTNUnlineClass ">
+        <span>{text}</span>
+      </div>
+    );
+  } else {
+    return (
+      <div className="ComponentBTNUnlineClass ">
+        <img className={'icon ' + form} src={icon} alt="icon" />
+        {prueba}
+        <span>{text}</span>
+      </div>
+    );
+  }
+};
+
